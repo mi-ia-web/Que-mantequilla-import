@@ -110,7 +110,7 @@
             padding: 30px;
             transition: 0.3s;
             height: 100%;
-            text-align: center;
+            text-align: left; /* Alineado a la izquierda para la lista */
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         .product-card:hover {
@@ -119,9 +119,38 @@
             transform: translateY(-10px);
         }
         .product-icon {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: var(--color-primario);
             margin-bottom: 20px;
+            display: block;
+            text-align: center;
+        }
+        .card-heading {
+            text-align: center;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--color-primario);
+        }
+        
+        /* Estilos de la lista de productos */
+        .product-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .product-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.95rem;
+            color: #555;
+            display: flex;
+            align-items: center;
+        }
+        .product-list li:last-child { border-bottom: none; }
+        .product-list i {
+            color: var(--color-secundario);
+            margin-right: 12px;
+            font-size: 0.8rem;
         }
 
         /* --- FOOTER --- */
@@ -204,8 +233,9 @@
                 <div class="col-lg-10">
                     <h1 class="display-3 fw-bold mb-4">REPUESTOS Y SUMINISTROS<br><span style="color: var(--color-secundario);">DIRECTO DE CHINA</span></h1>
                     <p class="lead mb-5 fs-4">La solución para tu negocio en Venezuela con los mejores precios del mercado.</p>
-                    <a href="#contacto" class="btn-mantequilla">
-                        <i class="fas fa-box-open me-2"></i> Ver Catálogo
+                    
+                    <a href="https://wa.me/584124053857" target="_blank" class="btn-mantequilla">
+                        <i class="fas fa-file-invoice-dollar me-2"></i> Pedir Presupuesto
                     </a>
                 </div>
             </div>
@@ -248,32 +278,59 @@
     <section id="productos" class="section-padding">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="section-title">¿Qué Importamos?</h2>
-                <p class="lead text-muted">Traemos todo tipo de repuestos y suministros al mayor.</p>
+                <h2 class="section-title">Nuestros Productos</h2>
+                <p class="lead text-muted">Contamos con amplio stock en repuestos de alta rotación.</p>
             </div>
 
             <div class="row g-4">
+                
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <i class="fas fa-filter product-icon"></i>
+                        <h4 class="card-heading">Filtración Especializada</h4>
+                        <ul class="product-list">
+                            <li><i class="fas fa-check"></i> Filtros VOLVO</li>
+                            <li><i class="fas fa-check"></i> Filtros CATERPILLAR</li>
+                            <li><i class="fas fa-check"></i> Filtros RACOR 2020</li>
+                            <li><i class="fas fa-check"></i> Filtros Industriales</li>
+                        </ul>
+                    </div>
+                </div>
+
                 <div class="col-md-4">
                     <div class="product-card">
                         <i class="fas fa-cogs product-icon"></i>
-                        <h4>Repuestos Automotrices</h4>
-                        <p class="text-muted mt-3">Piezas de motor, tren delantero y accesorios para vehículos de todas las marcas.</p>
+                        <h4 class="card-heading">Repuestos Maquinaria</h4>
+                        <ul class="product-list">
+                            <li><i class="fas fa-check"></i> Bandas de Freno</li>
+                            <li><i class="fas fa-check"></i> Pulmones de Freno</li>
+                            <li><i class="fas fa-check"></i> Rodamientos</li>
+                            <li><i class="fas fa-check"></i> Bujías</li>
+                            <li><i class="fas fa-check"></i> Retrovisores</li>
+                        </ul>
                     </div>
                 </div>
+
                 <div class="col-md-4">
                     <div class="product-card">
-                        <i class="fas fa-mobile-alt product-icon"></i>
-                        <h4>Electrónica</h4>
-                        <p class="text-muted mt-3">Accesorios para celulares, componentes electrónicos y gadgets de alta demanda.</p>
+                        <i class="fas fa-bolt product-icon"></i>
+                        <h4 class="card-heading">Eléctrico y Suministros</h4>
+                        <ul class="product-list">
+                            <li><i class="fas fa-check"></i> Breakers y Contactores</li>
+                            <li><i class="fas fa-check"></i> Reguladores de Voltaje</li>
+                            <li><i class="fas fa-check"></i> Cables Alta Temperatura</li>
+                            <li><i class="fas fa-check"></i> Partes Eléctricas</li>
+                            <li><i class="fas fa-check"></i> Extintores y Clavos</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="product-card">
-                        <i class="fas fa-tools product-icon"></i>
-                        <h4>Herramientas</h4>
-                        <p class="text-muted mt-3">Suministros industriales, herramientas de construcción y ferretería en general.</p>
-                    </div>
-                </div>
+
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="https://wa.me/584124053857" class="btn btn-warning fw-bold px-5 py-3 rounded-pill shadow">
+                    Consultar Disponibilidad
+                </a>
             </div>
         </div>
     </section>
