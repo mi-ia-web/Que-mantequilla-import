@@ -8,46 +8,59 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* --- PALETA DE COLORES QM (NEGRO Y AMARILLO) --- */
+        /* --- ESTILOS GENERALES --- */
         :root {
-            --color-primario: #1a1a1a;    /* Negro Carbón */
-            --color-secundario: #FFD700;  /* Amarillo Oro */
+            --color-primario: #1a1a1a;    /* Negro */
+            --color-secundario: #FFD700;  /* Amarillo */
             --color-texto: #333333;
-            --bg-gris: #f4f4f4;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: var(--color-texto);
+            padding-top: 130px; /* Aumentado el espacio para que el menú grande no tape nada */
         }
 
-        /* Navbar */
+        /* --- NAVBAR (MENÚ) --- */
         .navbar {
             background-color: white;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            min-height: 130px; /* Aumentada la altura para el logo mediano */
+            padding: 10px 0;
         }
-        .navbar-brand {
-            font-weight: 900;
-            color: var(--color-primario);
+        
+        /* Ajuste para el Logo (TAMAÑO MEDIANO SOLICITADO) */
+        .navbar-brand img {
+            max-height: 110px; /* Aumentado de 75px a 110px para mejor visibilidad */
+            width: auto;
+            transition: transform 0.3s;
         }
+        .navbar-brand img:hover {
+            transform: scale(1.05);
+        }
+
         .nav-link {
             color: var(--color-primario);
             font-weight: 700;
             text-transform: uppercase;
-            font-size: 0.9rem;
+            font-size: 1rem; /* Texto un poco más grande */
+            margin-left: 15px;
         }
         .nav-link:hover {
             color: #d4b100;
         }
 
-        /* Hero Section */
+        /* --- HERO SECTION (PORTADA) --- */
         .hero {
-            background: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.7)), url('https://images.unsplash.com/photo-1530124566582-a618bc2615dc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.7)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 140px 0;
+            padding: 100px 0;
             text-align: center;
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
         }
         
         .btn-mantequilla {
@@ -63,6 +76,7 @@
             text-decoration: none;
             display: inline-block;
             box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+            margin-top: 20px;
         }
         .btn-mantequilla:hover {
             background-color: white;
@@ -71,7 +85,7 @@
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
         }
 
-        /* Títulos */
+        /* --- SECCIÓN MISIÓN --- */
         .section-padding { padding: 90px 0; }
         .section-title {
             color: var(--color-primario);
@@ -92,145 +106,118 @@
             bottom: -15px;
         }
 
-        /* Tarjetas de Categorías */
-        .product-card {
-            background: white;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 30px;
-            transition: 0.3s;
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-        .product-card:hover {
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            border-bottom: 5px solid var(--color-secundario);
-            transform: translateY(-5px);
-        }
-        .product-icon {
-            font-size: 3rem;
-            color: var(--color-primario);
-            margin-bottom: 20px;
-        }
-        .product-list {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-        }
-        .product-list li {
-            padding: 8px 0;
-            border-bottom: 1px solid #f0f0f0;
-            font-size: 0.95rem;
-            color: #555;
-        }
-        .product-list li:last-child { border-bottom: none; }
-        .product-list i {
-            color: var(--color-secundario);
-            margin-right: 10px;
-            font-size: 0.8rem;
-        }
-
-        /* Footer & Botones de Redes */
+        /* --- FOOTER --- */
         footer {
             background-color: var(--color-primario);
             color: white;
             padding: 50px 0;
-            border-top: 5px solid var(--color-secundario);
+            border-top: 6px solid var(--color-secundario);
+            margin-top: auto;
         }
-
         .btn-social {
             color: white !important;
-            border: none;
-            transition: transform 0.2s;
-            font-size: 1.5rem;
-            margin: 0 10px;
+            font-size: 1.8rem;
+            margin: 0 15px;
+            transition: 0.3s;
         }
         .btn-social:hover {
-            transform: translateY(-3px);
-            opacity: 0.9;
             color: var(--color-secundario) !important;
+            transform: translateY(-5px);
         }
-        
-        /* Botón Flotante WhatsApp (Completado) */
+
+        /* --- WHATSAPP FLOTANTE --- */
         .whatsapp-float {
             position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
+            width: 65px;
+            height: 65px;
+            bottom: 30px;
+            right: 30px;
             background-color: #25d366;
             color: #FFF;
             border-radius: 50px;
             text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
-            z-index: 100;
+            font-size: 35px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: 0.3s;
             text-decoration: none;
+            transition: 0.3s;
         }
         .whatsapp-float:hover {
             background-color: #128c7e;
             transform: scale(1.1);
-            color: white;
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <i class="fas fa-shipping-fast text-warning me-2"></i> QUE MANTEQUILLA IMPORT
+                <img src="logo.png" alt="Logo Que Mantequilla Import">
             </a>
+            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#mision">Misión</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="https://wa.me/580000000000" class="btn btn-warning fw-bold rounded-pill px-4">Pedir Presupuesto</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section class="hero d-flex align-items-center">
+    <section class="hero">
         <div class="container">
-            <h1 class="display-3 fw-bold mb-4">REPUESTOS Y SUMINISTROS<br><span style="color: var(--color-secundario);">DIRECTO DE CHINA</span></h1>
-            <p class="lead mb-5">La solución para tu negocio en Venezuela con los mejores precios del mercado.</p>
-            <a href="#contacto" class="btn-mantequilla">Solicitar Cotización</a>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h1 class="display-3 fw-bold mb-4">REPUESTOS Y SUMINISTROS<br><span style="color: var(--color-secundario);">DIRECTO DE CHINA</span></h1>
+                    <p class="lead mb-5 fs-4">La solución para tu negocio en Venezuela con los mejores precios del mercado.</p>
+                    <a href="#contacto" class="btn-mantequilla">
+                        <i class="fas fa-box-open me-2"></i> Ver Catálogo
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="mision" class="section-padding bg-light">
         <div class="container">
-            <div class="text-center">
+            <div class="text-center mb-5">
                 <h2 class="section-title">Nuestra Misión</h2>
             </div>
             
-            <div class="row align-items-center mt-5">
+            <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
-                    <div class="p-4">
-                        <h3 class="fw-bold mb-3" style="color: var(--color-primario);">Impulsando tu Negocio</h3>
-                        <p class="lead" style="line-height: 1.8;">
-                            Nuestra misión es fomentar el crecimiento de nuevos emprendedores, trayendo los mejores precios directamente de China para que puedas competir en los diferentes rubros del mercado venezolano.
+                    <div class="p-3">
+                        <h3 class="fw-bold mb-4" style="color: var(--color-primario);">Impulsamos tu Emprendimiento</h3>
+                        <p class="lead fs-5 text-secondary" style="line-height: 1.8;">
+                            "Nuestra misión es fomentar el crecimiento de nuevos emprendedores, trayendo los mejores precios directamente de China para que puedas competir en los diferentes rubros del mercado venezolano."
                         </p>
-                        <ul class="list-unstyled mt-4">
-                            <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i> Precios de fábrica</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i> Logística garantizada</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i> Asesoría personalizada</li>
-                        </ul>
+                        <div class="mt-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-check-circle fa-2x text-warning me-3"></i>
+                                <span class="fw-bold">Logística Segura</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-hand-holding-usd fa-2x text-warning me-3"></i>
+                                <span class="fw-bold">Mejores Costos</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-lg-6 text-center">
-                    <img src="NOMBRE_DE_TU_IMAGEN.jpg" alt="Equipo Que Mantequilla Import" class="img-fluid rounded shadow-lg border border-warning border-3">
+                    <img src="imagen-mision.jpg" alt="Equipo de Trabajo" class="img-fluid rounded shadow-lg border-bottom border-warning border-5 w-100" style="object-fit: cover; min-height: 300px;">
                 </div>
             </div>
         </div>
@@ -238,16 +225,19 @@
 
     <footer id="contacto">
         <div class="container text-center">
-            <h3 class="mb-4">¿Listo para importar?</h3>
-            <p class="mb-5">Contáctanos hoy mismo y comienza a ahorrar en tus suministros.</p>
+            <h3 class="fw-bold mb-4">¿Listo para importar?</h3>
+            <p class="mb-5 fs-5">Contáctanos hoy mismo y comienza a ahorrar en tus suministros.</p>
             
-            <div class="mb-4">
+            <div class="mb-5">
                 <a href="#" class="btn-social"><i class="fab fa-instagram"></i></a>
                 <a href="#" class="btn-social"><i class="fab fa-facebook"></i></a>
                 <a href="#" class="btn-social"><i class="fab fa-tiktok"></i></a>
+                <a href="#" class="btn-social"><i class="fab fa-whatsapp"></i></a>
             </div>
             
-            <p class="small text-white-50">&copy; 2023 Que Mantequilla Import C.A. Todos los derechos reservados.</p>
+            <div class="border-top border-secondary pt-4">
+                <p class="small text-white-50">&copy; 2024 Que Mantequilla Import C.A. Todos los derechos reservados.</p>
+            </div>
         </div>
     </footer>
 
